@@ -15,8 +15,7 @@ Reproductor de audio visto en clase implementado en la interfaz del GameBoy con 
   3.2 En la parte izquierda cuenta con una barra blanca que indica el nivel de volumen que tiene el dispositivo.
   3.3 En la parte inferior cuenta con una barra verde que indica el progreso de la canción e incluye el tiempo en minutos:segundos que lleva reproducido
   3.4 En la parte derecha entre la barra de progreso y la barra del título está la imagen del cover de la canción.
-  
-  
+4. Al hacer click en la pantalla, la barra de progreso (el tiempo de reproducción) se ubicará en la posición que ha hecho click.
 
 
 
