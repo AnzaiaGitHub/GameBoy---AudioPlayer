@@ -1,0 +1,334 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+/*Paleta de colores*/
+:root{
+	--ScreenGray:rgb(176, 184, 192);
+	--DarkGray:rgb(80, 80, 80);
+	--SkyGray:rgb(224, 227, 230);
+	--Yellow:rgb(255, 231, 36);
+}
+.contenedor{
+	width: 100vw;
+	height: 100vh;
+	/*background: URL("../img/gbc.png");*/
+	background-size: contain;
+	background-repeat: no-repeat;
+	display: flex;
+}
+.carcasa{
+	/*proporciones recomendadas W=342.4 H=599.64 (Px)*/
+	position: absolute;
+	top:5vh;
+	left: 22.1vw;
+	width: 342.4px;
+	height: 599.64px;
+}
+.carcasa_sup{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 80%;
+	background-color: var(--Yellow);
+	border-top: 5px solid black;
+	border-left: 5px solid black;
+	border-right: 5px solid black;
+	border-radius: 20px 20px 0 0;
+	padding:22px;
+}
+.pantallagris_sup{
+	width:100%;
+	height: 50.8%;
+	background-color: var(--DarkGray);
+	border-top:5px solid black;
+	border-left:5px solid black;
+	border-right:5px solid black;
+	border-radius: 10px 10px 0 0;
+	display: flex;
+	justify-content: center;
+}
+.pantallajuego{
+	position: relative;
+	width: 69%;
+	height: 82%;
+	margin-top: 10%;
+	border: 5px solid black;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.pixelacion{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.pixelacion .pixel{
+	width: 10%;
+	height: 10%;
+	background-color: #020;
+	border:1px solid gray;
+	opacity:0.5;
+}
+.cover{
+	position:  absolute;
+	top: 0;
+	width:100%;
+	height: 100%;
+	cursor: pointer;
+	/* opacity: 0.5; */
+}
+.cover .title{
+	position: absolute;
+	width: 100%;
+	height:10%;
+	background: linear-gradient(to top,rgba(255,255,255,.3),white,rgba(255,255,255,.5));
+	font-weight: bolder;
+	text-align:center;
+}
+.cover .progress{
+	position: absolute;
+	bottom: 0;
+	height: 10%;
+	border-radius: 5px;
+	transition: width 0.1s;	background-color: green;
+}
+.cover .progress .timer{
+	font-weight: bolder;
+	color: white;
+}
+.cover .volumen{
+	position: absolute;
+	bottom:15%;
+	width: 10%;
+	height:70%;
+	transition: height 0.3s;
+	background-color: white;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.cover .volumen img{
+	position: absolute;
+	width:80%;
+	left:10%;
+}
+.cover .image{
+	position: absolute;
+	width:70%;
+	height: 70%;
+	right:10%;
+	top:15%;
+	border-radius: 5px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cover .image .source{
+	height:100%;
+	width:100%;
+}
+
+
+.pantallagris_inf{
+	width:100%;
+	height: 12.7%;
+	background-color: var(--DarkGray);
+	border-bottom:5px solid black;
+	border-left:5px solid black;
+	border-right:5px solid black;
+	border-radius: 0 0 40% 40%;
+}
+.botones{
+	position: relative;
+	width: 100%;
+	height: 36.5%;
+}
+.nintendo{
+	text-align:center;
+	line-height: 60%;
+	position: absolute;
+	left: 33.8%;
+	top:11.5%;
+	width: 31.5%;
+	height: 22px;
+	border: 5px solid black;
+	border-radius: 10px;
+}
+.keypad{
+	position: absolute;
+	bottom: 8%;
+	left: 0;
+	width:98px;
+	height:98px;
+	display: flex;
+	justify-content: center;
+}
+.keypad>div{
+	background-color: var(--DarkGray);
+}
+.botones>div>div:hover{
+	transition: 0.5s all;
+	background-color: rgb(120, 120, 120);
+	cursor: pointer;
+}
+.botones>div>div:active{
+	transform: scale(0.88,0.88);
+}
+.up{
+	position: absolute;
+	top:0;
+	width: 38%;
+	height: 39%;
+	border-radius: 8px 8px 0 0;
+	border-top:8px solid black;
+	border-left:8px solid black;
+	border-right:8px solid black;
+	z-index: 2;
+}
+.up > img{
+	position: absolute;
+	width:90%;
+	bottom: 140%;
+	left:5%;
+}
+.bottom{
+	position: absolute;
+	bottom: 0;
+	width: 38%;
+	height: 39%;
+	border-radius: 0 0 8px 8px;
+	border-bottom:8px solid black;
+	border-left:8px solid black;
+	border-right:8px solid black;
+	z-index: 2;
+}
+.bottom > img{
+	position: absolute;
+	width:90%;
+	top: 140%;
+	left:5%;
+}
+.left{
+	position: absolute;
+	top:31%;
+	left: 0;
+	width: 39%;
+	height: 38%;
+	border-radius: 8px 0 0 8px;
+	border-top:8px solid black;
+	border-left:8px solid black;
+	border-bottom:8px solid black;
+	z-index: 2;
+}
+.left img{
+	position: absolute;
+	height:70%;
+	width:45%;
+	transform: scale(-1);
+	top:15%;
+	right:140%;
+}
+.right{
+	position: absolute;
+	top:31%;
+	right: 0;
+	width: 39%;
+	height: 38%;
+	border-radius: 0 8px 8px 0;
+	border-top:8px solid black;
+	border-bottom:8px solid black;
+	border-right:8px solid black;
+	z-index: 2;
+}
+.right img{
+	position: absolute;
+	height:70%;
+	width:45%;
+	top:15%;
+	left:140%;
+}
+
+.center{
+	position: absolute;
+	top:33%;
+	left: 33%;
+	width: 34%;
+	height: 34%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 0;
+}
+.puntico{
+	width: 62%;
+	height: 62%;
+	border-radius: 50%;
+	border: 4px solid black;
+}
+.circulares{
+	position: absolute;
+	right: 0;
+	bottom: 17%;
+	width: 39%;
+	height: 46%;
+}
+.circulares>div{
+	width: 50px;
+	height: 50px;
+	border: 8px solid black;
+	background-color: var(--DarkGray);
+	border-radius: 50%;
+}
+.circulo_1{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.circulares>div>img{
+	position: absolute;
+	width:70%;
+	bottom:120%;
+	left:15%;
+}
+.circulo_2{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.carcasa_inf{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 20%;
+	background-color: var(--Yellow);
+	border-bottom: 5px solid black;
+	border-left: 5px solid black;
+	border-right: 5px solid black;
+	border-radius: 0 0 40% 40%;
+}
+.carcasa_inf .botones{
+	position: relative;
+	width: 40%;
+	margin-left: 30%;
+	height: 24%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+/*Select - Start*/
+.carcasa_inf .botones>div{
+	border: 7px solid black;
+	background-color: var(--DarkGray);
+	border-radius: 25px;
+	width: 50px;
+	height: 22px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
